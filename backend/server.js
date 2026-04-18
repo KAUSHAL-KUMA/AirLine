@@ -18,9 +18,15 @@ app.use(cors({
     credentials: true
 }))
 app.use(express.json())
+
+
 app.use("/api/airline",airlineRouter)
 
+
+
 const port = process.env.PORT || 4000;
+
+
 
 app.listen(port,() =>{
     console.log(`server run at http://localhost${port}`)

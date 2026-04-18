@@ -2,28 +2,38 @@ import mongoose from "mongoose";
 
 
 
-const airlineSchema = new mongoose.Schema(
+const destinationSchema = new mongoose.Schema(
   {
-    name: {
+    city: {
       type: String,
       required: true,
       trim: true,
-    },
-    code: {
-      type: String,
-      required: true,
-      unique: true,
-      uppercase: true,
-      trim: true,
-      minlength: 2,
-      maxlength: 3,
     },
     country: {
       type: String,
       required: true,
       trim: true,
     },
-    logo: {
+    airportName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    airportCode: {
+      type: String,
+      required: true,
+      unique: true,
+      uppercase: true,
+      trim: true,
+      minlength: 3,
+      maxlength: 3,
+    },
+    description: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    image: {
       type: String,
       default: "",
       trim: true,
@@ -36,8 +46,7 @@ const airlineSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Airline = mongoose.model("Airline", airlineSchema);
+const Destination = mongoose.model("Destination", destinationSchema);
 
 
-
-export default Airline;
+export default Destination;

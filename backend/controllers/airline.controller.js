@@ -1,5 +1,7 @@
 import Airline from "../models/airline.model.js";
 
+
+
 export const createAirline = async (req, res) => {
   try {
     const airline = await Airline.create(req.body);
